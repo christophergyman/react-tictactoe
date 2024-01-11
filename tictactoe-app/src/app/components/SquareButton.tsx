@@ -1,20 +1,11 @@
 "use client";
 import { useState } from "react";
 
-function SquareButton(){
-
-    // set button counter variable
-    const [value, setValue] = useState('  ');
-
-    // func handle click
-    function handleClick(){
-        setValue('X');
-    }
-
+function SquareButton(squareValue: any, onSquareClick: () => VoidFunction){
     return(
         <div>
-            <button className="btn btn-neutral" onClick={handleClick}>
-                {value}
+            <button className="btn btn-neutral" onClick={onSquareClick}>
+                {typeof squareValue === 'string' ? squareValue: null}
             </button>
         </div>
     );
