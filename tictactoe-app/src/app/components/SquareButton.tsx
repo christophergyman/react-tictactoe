@@ -1,12 +1,15 @@
 "use client";
 import { useState } from "react";
+import { SquareButtonInterface } from "./Board";
 
-function SquareButton(squareValue: any, onSquareClick: () => VoidFunction){
-    return(
+interface MyComponentProps {
+    data: SquareButtonInterface
+}
+
+const SquareButton: React.FC<SquareButtonInterface> = ({}) => {
+    return (
         <div>
-            <button className="btn btn-neutral" onClick={onSquareClick}>
-                {typeof squareValue === 'string' ? squareValue: null}
-            </button>
+            <p>Square value: {}}</p>
         </div>
     );
 };
